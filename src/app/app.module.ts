@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './header/pages/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
    declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/pages/header.component';
       HttpClientModule,
       BrowserAnimationsModule,
       MatButtonModule,
+      MatToolbarModule,
    ],
    providers: [],
    bootstrap: [

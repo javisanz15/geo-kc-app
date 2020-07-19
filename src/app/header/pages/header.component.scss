@@ -1,16 +1,5 @@
-.main-header-area {
-    height: 120px;
-    background-color: blue;
-    .main-header-row {
-        height: 100%;
-        .main-header-col {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .home-button {
-                color: white !important;
-            }
-        }
-    }
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
