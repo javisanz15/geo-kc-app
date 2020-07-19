@@ -31,8 +31,7 @@
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -140,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "geo-kc-app"
+  "defaultProject": "geo-kc-app",
+  "cli": {
+    "analytics": "423f752b-4d5e-4664-b16e-414416ca058c"
+  }
 }
