@@ -1,3 +1,18 @@
-<p>
-  main works!
-</p>
+<div class="main-page-container container" [formGroup]="form">
+  <div class="toggle-button-row row justify-content-start">
+    <div class="toggle-label-col col-12">
+      Please Select the KC map you would like to display:
+    </div>
+    <div class="toggle-button-col col-4">
+      <mat-button-toggle-group name="toggle" aria-label="Map Area" formControlName="toggle" (change)="this.retrieveChartData()">
+        <mat-button-toggle value="hood">Neighbourhoods</mat-button-toggle>
+        <mat-button-toggle value="trac">Tracs</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div class="geo-chart-row row row-justify-center" *ngIf="chartData">
+    <div class="geo-chart-col col-12">
+      <app-geo-chart [chartData]="chartData"></app-geo-chart>
+    </div>
+  </div>
+</div>
