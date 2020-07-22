@@ -40,12 +40,19 @@ export class GeoChartComponent implements OnInit {
         legend: {
           display: false,
         },
+        tooltips: {
+          bodyFontSize: 20,
+          titleFontSize: 20,
+        },
         scale: {
           projection: 'mercator',
         },
         geo: {
           colorScale: {
             display: true,
+            legend: {
+              fontSize: 30,
+            }
           },
         },
       },
@@ -101,6 +108,6 @@ export class GeoChartComponent implements OnInit {
     } else {
       result = d.properties[`pop-commute-${commute}`];
     }
-    return result;
+    return parseInt(result.toFixed(0));
   }
 }
