@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Chart from 'chart.js';
 import 'chartjs-chart-geo';
+import { MatDialog } from '@angular/material/dialog';
+import { GeoPopupComponent } from './geo-popup/geo-popup.component';
+import { GeoChartService } from '../services/geo-chart.service';
 
 @Component({
   selector: 'app-geo-chart',
@@ -12,24 +15,28 @@ export class GeoChartComponent implements OnInit {
   @Input() chartData: any;
   @Input() commute: string;
   public chart: any;
-  constructor() { }
+  public type: string = 'hood';
+  constructor(
+    public dialog: MatDialog,
+    public geoChartService: GeoChartService,
+  ) { }
 
   ngOnInit() {
-    this.buildChart('hood', this.commute);
+    this.buildChart(this.type, this.commute);
   }
 
   public buildChart(type: string, commute: string) {
     this.chart = new Chart(document.getElementById('canvas'), {
       type: 'choropleth',
       data: {
-        labels: this.chartData.features.map((d) => this.getLabel(type, d.properties.shid)),
+        labels: this.chartData.features.map((d) => this.geoChartService.getLabel(type, d.properties.shid)),
         datasets: [
           {
             label: 'Countries',
             outline: this.chartData.features,
             data: this.chartData.features.map((d) => ({
               feature: d,
-              value: this.getCommuteValue(this.commute, d),
+              value: this.geoChartService.getCommuteValue(this.commute, d),
             })),
           },
         ],
@@ -47,6 +54,7 @@ export class GeoChartComponent implements OnInit {
         scale: {
           projection: 'mercator',
         },
+        onClick: (evt) => this.goToAreaDetail(evt),
         geo: {
           colorScale: {
             display: true,
@@ -62,15 +70,16 @@ export class GeoChartComponent implements OnInit {
   public updateChart(type: string, data: any, commute: string) {
     this.chartData = data;
     this.commute = commute;
+    this.type = type;
     this.chart.data = {
-      labels: this.chartData.features.map((d) => this.getLabel(type, d.properties.shid)),
+      labels: this.chartData.features.map((d) => this.geoChartService.getLabel(type, d.properties.shid)),
       datasets: [
         {
           label: 'Countries',
           outline: this.chartData.features,
           data: this.chartData.features.map((d) => ({
             feature: d,
-            value: this.getCommuteValue(commute, d),
+            value: this.geoChartService.getCommuteValue(commute, d),
           })),
         },
       ],
@@ -78,36 +87,15 @@ export class GeoChartComponent implements OnInit {
     this.chart.update();
   }
 
-  public getLabel(type: string, shid: string): string {
-    if(type === 'hood') {
-      const result = shid.split('neighborhood:')[1];
-      return this.changeUnderscore(result);
-    } else {
-      return shid.split('tract:')[1];
-    }
-  }
-
-  private changeUnderscore(pre: string): string {
-    const result = pre.replace('_', ' ');
-    if(result.includes('_')) {
-      return this.changeUnderscore(result);
-    }
-
-    return result;
-  }
-
-  private getCommuteValue(commute: string, d: any): number {
-    console.log(commute);
-    let result : number;
-    if(commute === 'all') {
-      console.log('d', d);
-      result = d.properties["pop-commute-drive_alone"] +
-      d.properties["pop-commute-drive_carpool"] +
-      d.properties["pop-commute-public_transit"] +
-      d.properties["pop-commute-walk"];
-    } else {
-      result = d.properties[`pop-commute-${commute}`];
-    }
-    return parseInt(result.toFixed(0));
+  public goToAreaDetail(evt: any) {
+    const element = this.chart.getElementAtEvent(evt)[0].feature.properties;
+    this.dialog.open(GeoPopupComponent, {
+      height: '750px',
+      width: '700px',
+      data: {
+        areaElement: element,
+        type: this.type,
+      }
+    });
   }
 }

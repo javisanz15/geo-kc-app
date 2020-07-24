@@ -1,0 +1,13 @@
+.popup-title {
+    font-size: 26px;
+}
+
+.popup-main {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-height: unset;
+    .popup-chart-row {
+        padding-top: 25px;
+    }
+}

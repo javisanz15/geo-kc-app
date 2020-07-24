@@ -14,7 +14,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { GeoPopupComponent } from './geo-chart/pages/geo-popup/geo-popup.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
    declarations: [
@@ -22,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       MainComponent,
       HeaderComponent,
       GeoChartComponent,
+      GeoPopupComponent,
    ],
    imports: [
       BrowserModule,
@@ -35,6 +38,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       ReactiveFormsModule,
       MatSelectModule,
       MatFormFieldModule,
+      MatDialogModule,
+      MatTableModule,
    ],
    providers: [],
    bootstrap: [

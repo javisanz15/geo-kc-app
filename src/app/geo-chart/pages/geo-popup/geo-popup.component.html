@@ -1,0 +1,27 @@
+<div class="popup-title" mat-dialog-title>{{getAreaTitle() | titlecase}}</div>
+<div class="popup-main container-fluid" mat-dialog-content>
+  <div class="popup-table-row row">
+    <div class="popup-table-col col-12">
+      <mat-table [dataSource]="commutesTable" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="commute">
+          <mat-header-cell *matHeaderCellDef> Commute Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.commute | titlecase}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <mat-header-cell *matHeaderCellDef> # People </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div class="popup-chart-row row">
+    <div class="popup-chart-col col-12">
+        <canvas id="popup"></canvas>
+    </div>
+  </div>
+</div>
