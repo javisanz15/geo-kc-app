@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import { GeoPopupComponent } from './geo-chart/pages/geo-popup/geo-popup.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
    declarations: [
@@ -40,6 +42,9 @@ import {MatTableModule} from '@angular/material/table';
       MatFormFieldModule,
       MatDialogModule,
       MatTableModule,
+      HammerModule,
+      MatIconModule,
+      MatTooltipModule,
    ],
    providers: [],
    bootstrap: [

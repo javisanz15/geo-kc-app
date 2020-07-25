@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Chart from 'chart.js';
 import 'chartjs-chart-geo';
+import 'chartjs-plugin-zoom';
+import 'hammerjs';
 import { MatDialog } from '@angular/material/dialog';
 import { GeoPopupComponent } from './geo-popup/geo-popup.component';
 import { GeoChartService } from '../services/geo-chart.service';
@@ -58,11 +60,36 @@ export class GeoChartComponent implements OnInit {
         geo: {
           colorScale: {
             display: true,
+            quantize: 30,
             legend: {
               fontSize: 30,
             }
           },
         },
+        plugins: {
+          zoom: {
+            pan: {
+              // Boolean to enable panning
+              enabled: true,
+              mode: 'xy',
+        
+              // Function called while the user is panning
+              onPan: function({chart}) { console.log(`I'm panning!!!`); },
+              // Function called once panning is completed
+              onPanComplete: function({chart}) { console.log(`I was panned!!!`); }
+            },
+            zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+              mode: 'xy',
+        
+              // Function called while the user is zooming
+              onZoom: function({chart}) { console.log(`I'm zooming!!!`); },
+              // Function called once zooming is completed
+              onZoomComplete: function({chart}) { console.log(`I was zoomed!!!`); }
+            }
+          }
+        }
       },
     });
   }

@@ -19,7 +19,6 @@ export class GeoPopupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('tt', this.data.areaElement);
     this.commutesTable = this.getCommutesTable();
     this.createChart(this.commutesTable);
   }
@@ -29,7 +28,7 @@ export class GeoPopupComponent implements OnInit {
     const keys = Object.keys(this.data.areaElement).filter(item => item.includes('commute'));
     keys.forEach(key => {
       const item = {
-        commute: key.replace('pop-commute-','').replace('_',' '),
+        commute: key.replace('pop-commute-', '').replace('_', ' '),
         value: this.data.areaElement[key].toFixed(0),
       }
 
@@ -46,32 +45,35 @@ export class GeoPopupComponent implements OnInit {
   }
 
   private createChart(commutes: any[]) {
-    console.log('cc', commutes.map(item => item.commute));
     this.chart = new Chart(document.getElementById('popup'), {
       type: 'doughnut',
       data: {
         datasets: [{
           data: commutes.map(item => item.value),
           backgroundColor: [
-						'#5972ff',
-						'#3f51b5',
-						'#313f8c',
-						'#1f2859',
-					],
+            '#5972ff',
+            '#3f51b5',
+            '#313f8c',
+            '#1f2859',
+          ],
         }],
         labels: commutes.map(item => item.commute),
       },
       options: {
-				responsive: true,
-				legend: {
-					position: 'bottom',
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-  });
+        responsive: true,
+        legend: {
+          position: 'bottom',
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
+  }
+
+  public onNoClick() {
+
   }
 
 }

@@ -1,4 +1,9 @@
-<div class="popup-title" mat-dialog-title>{{getAreaTitle() | titlecase}}</div>
+<div class="popup-title" mat-dialog-title>
+  {{getAreaTitle() | titlecase}} 
+  <button mat-icon-button aria-label="Close" mat-dialog-close matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <div class="popup-main container-fluid" mat-dialog-content>
   <div class="popup-table-row row">
     <div class="popup-table-col col-12">
