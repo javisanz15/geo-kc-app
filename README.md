@@ -1,26 +1,34 @@
 # GeoKcApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+This is an Angular v10 project for the interview process for MySidewalk. It consists of a page that loads two GeoJSON from KC layout, separated by neighbourhoods or tracts, and displays statistics regarding commutes present in those areas. You can see the values for the commutes in the map by using the available dropdown, but you can also click in a single geographical area, and a popup will appear showing the full data regarding the area in further detail.
+
+The first step to run this project will be installing the Angular CLI. I count that you already have NodeJS and thus NPM before starting to clone the project. To install the Angular CLI you will have to introduce the following command:
+
+`npm install -g @angular/cli@latest`
+
+If you need more info you can visit the Angular website [Angular CLI](https://angular.io/cli).
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The first step would be installing the needed dependencies and packages for the app to run. Using the command line, go to the project folder. Then execute the following command:
 
-## Code scaffolding
+`npm install`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This will install all the needed dependencies. It might take a few minutes if it is the first time. Once this process is finished, you can start the app using the following command:
 
-## Build
+`npm run start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This will start the execution of the app. When this process is done, the app will be reachable in the following address: http://localhost:4200
 
-## Running unit tests
+## Alternative Codesandbox
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If the installing of the app is unsuccessful, there is an alternative way to access it through the following codesandbox.
 
-## Running end-to-end tests
+## Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Here you can find screenshots of the app once it is started:
+
+
 
 ## Further help
 
