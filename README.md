@@ -20,16 +20,6 @@ This will install all the needed dependencies. It might take a few minutes if it
 
 This will start the execution of the app. When this process is done, the app will be reachable in the following address: http://localhost:4200
 
-## Alternative Codesandbox
-
-If the installing of the app is unsuccessful, there is an alternative way to access it through the following codesandbox.
-
-## Screenshots
-
-Here you can find screenshots of the app once it is started:
-
-
-
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
