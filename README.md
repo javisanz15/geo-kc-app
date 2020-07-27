@@ -2,7 +2,7 @@
 
 This is an Angular v10 project for the interview process for MySidewalk. It consists of a page that loads two GeoJSON from KC layout, separated by neighbourhoods or tracts, and displays statistics regarding commutes present in those areas. You can see the values for the commutes in the map by using the available dropdown, but you can also click in a single geographical area, and a popup will appear showing the full data regarding the area in further detail.
 
-I count that you already have NodeJS and thus NPM before starting to clone the project. If that is not the case please download it from the following website [NodeJS Download](https://nodejs.org/es/download/).
+To run any kind of Angular or AngularJS projects, it is necessary to previously have installed in your terminal NodeJS and thus NPM before starting to clone the project. If that is not the case please download it from the following website [NodeJS Download](https://nodejs.org/es/download/).
 
 ## Development server
 
@@ -23,6 +23,8 @@ Please retry the command explained before. If it is successful, you can start th
 `npm run start`
 
 This will start the execution of the app. When this process is done, the app will be reachable in the following address: http://localhost:4200
+
+To run the tests you should simply use the following command: `npm run test`
 
 ## Further help
 
