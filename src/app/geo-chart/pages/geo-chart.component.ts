@@ -14,6 +14,16 @@ export class GeoChartComponent implements OnInit {
 
   @Input() chartData: any;
   @Input() commute: string;
+  public mockProp = {
+    "id": 935624,
+    "shid": "country:us/state:mo/place:kansas_city/neighborhood:blue_vue_hills22",
+    "area": 2923431,
+    "pop-commute-drive_alone": 432.355008787346,
+    "pop-commute-drive_carpool": 5432.6110134739309,
+    "pop-commute-public_transit": 23332,
+    "pop-commute-walk": 4333
+  };
+  public element: any;
   public chart: any;
   public type: string = 'hood';
   constructor(
@@ -89,12 +99,12 @@ export class GeoChartComponent implements OnInit {
   }
 
   public goToAreaDetail(evt: any) {
-    const element = this.chart.getElementAtEvent(evt)[0].feature.properties;
+    this.element = evt ? this.chart.getElementAtEvent(evt)[0].feature.properties: this.mockProp;
     this.dialog.open(GeoPopupComponent, {
       height: '750px',
       width: '700px',
       data: {
-        areaElement: element,
+        areaElement: this.element,
         type: this.type,
       }
     });

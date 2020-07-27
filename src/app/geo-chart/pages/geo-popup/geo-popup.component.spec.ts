@@ -5,6 +5,8 @@ import { DebugElement } from '@angular/core';
 
 import { GeoPopupComponent } from './geo-popup.component';
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('GeoPopupComponent', () => {
   let component: GeoPopupComponent;
@@ -15,6 +17,8 @@ describe('GeoPopupComponent', () => {
       declarations: [ GeoPopupComponent ],
       imports: [
         MatDialogModule,
+        MatTableModule,
+        MatIconModule,
       ],
       providers: [
         { provide: MAT_DIALOG_DATA, useValue: {
