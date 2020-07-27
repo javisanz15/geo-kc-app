@@ -1,26 +1,28 @@
 # GeoKcApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+This is an Angular v10 project for the interview process for MySidewalk. It consists of a page that loads two GeoJSON from KC layout, separated by neighbourhoods or tracts, and displays statistics regarding commutes present in those areas. You can see the values for the commutes in the map by using the available dropdown, but you can also click in a single geographical area, and a popup will appear showing the full data regarding the area in further detail.
+
+I count that you already have NodeJS and thus NPM before starting to clone the project. If that is not the case please download it from the following website [NodeJS Download](https://nodejs.org/es/download/).
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The first step would be installing the needed dependencies and packages for the app to run. Using the command line, go to the project folder. Then execute the following command:
 
-## Code scaffolding
+`npm install`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This will install all the needed dependencies. It might take a few minutes if it is the first time. Once this process is finished, please check out that it has installed the Angular CLI by typing the following command:
 
-## Build
+`ng --version`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+If that doesn't work, please add the Angular CLI globally. That might be necessary for some OS.
 
-## Running unit tests
+`npm install @angular/cli@latest`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Please retry the command explained before. If it is successful, you can start the app using the following command:
 
-## Running end-to-end tests
+`npm run start`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This will start the execution of the app. When this process is done, the app will be reachable in the following address: http://localhost:4200
 
 ## Further help
 
