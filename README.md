@@ -16,7 +16,7 @@ This will install all the needed dependencies. It might take a few minutes if it
 
 If that doesn't work, please add the Angular CLI globally. That might be necessary for some OS.
 
-`npm install @angular/cli@latest`
+`npm install -g @angular/cli@latest`
 
 Please retry the command explained before. If it is successful, you can start the app using the following command:
 
