@@ -2,11 +2,7 @@
 
 This is an Angular v10 project for the interview process for MySidewalk. It consists of a page that loads two GeoJSON from KC layout, separated by neighbourhoods or tracts, and displays statistics regarding commutes present in those areas. You can see the values for the commutes in the map by using the available dropdown, but you can also click in a single geographical area, and a popup will appear showing the full data regarding the area in further detail.
 
-The first step to run this project will be installing the Angular CLI. I count that you already have NodeJS and thus NPM before starting to clone the project. To install the Angular CLI you will have to introduce the following command:
-
-`npm install -g @angular/cli@latest`
-
-If you need more info you can visit the Angular website [Angular CLI](https://angular.io/cli).
+I count that you already have NodeJS and thus NPM before starting to clone the project. If that is not the case please download it from the following website [NodeJS Download](https://nodejs.org/es/download/).
 
 ## Development server
 
@@ -14,7 +10,15 @@ The first step would be installing the needed dependencies and packages for the 
 
 `npm install`
 
-This will install all the needed dependencies. It might take a few minutes if it is the first time. Once this process is finished, you can start the app using the following command:
+This will install all the needed dependencies. It might take a few minutes if it is the first time. Once this process is finished, please check out that it has installed the Angular CLI by typing the following command:
+
+`ng --version`
+
+If that doesn't work, please add the Angular CLI globally. That might be necessary for some OS.
+
+`npm install @angular/cli@latest`
+
+Please retry the command explained before. If it is successful, you can start the app using the following command:
 
 `npm run start`
 
