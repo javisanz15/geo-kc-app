@@ -4,6 +4,8 @@ This is an Angular v10 project for the interview process for MySidewalk. It cons
 
 To run any kind of Angular or AngularJS projects, it is necessary to previously have installed in your terminal NodeJS and thus NPM before starting to clone the project. If that is not the case please download it from the following website [NodeJS Download](https://nodejs.org/es/download/).
 
+IMPORTANT: If you need to download NodeJS and NPM, make sure NPM is in the path environment variable so the npm command works.
+
 ## Development server
 
 The first step would be installing the needed dependencies and packages for the app to run. Using the command line, go to the project folder. Then execute the following command:
@@ -24,7 +26,11 @@ Please retry the command explained before. If it is successful, you can start th
 
 This will start the execution of the app. When this process is done, the app will be reachable in the following address: http://localhost:4200
 
-To run the tests you should simply use the following command: `npm run test`
+## Run the tests
+
+To run the tests you should simply use the following command: `npm run test-coverage`
+
+The tests in Angular use Chrome as browser, if you want to do it without chrome, use `npm run test-coverage-headless`
 
 ## Further help
 
