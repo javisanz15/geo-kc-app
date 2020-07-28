@@ -17,4 +17,10 @@ describe('Service: Main', () => {
   it('should ...', inject([MainService], (service: MainService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('should load tracts', inject([MainService], (service: MainService) => {
+    let result = service.getKCTracts();
+    expect(result).not.toBeNull();
+  }));
+
 });

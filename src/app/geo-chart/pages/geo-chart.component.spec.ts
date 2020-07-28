@@ -7,6 +7,9 @@ import { GeoChartComponent } from './geo-chart.component';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { GeoPopupComponent } from './geo-popup/geo-popup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('GeoChartComponent', () => {
   let component: GeoChartComponent;
@@ -21,6 +24,9 @@ describe('GeoChartComponent', () => {
       imports: [
         MatDialogModule,
         BrowserAnimationsModule,
+        MatIconModule,
+        MatTableModule,
+        MatButtonModule,
       ],
       providers: [
         

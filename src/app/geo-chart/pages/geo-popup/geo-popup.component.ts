@@ -72,8 +72,4 @@ export class GeoPopupComponent implements OnInit {
     });
   }
 
-  public onNoClick() {
-
-  }
-
 }
