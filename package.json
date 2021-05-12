@@ -25,7 +25,7 @@
     "@angular/router": "~10.0.4",
     "@gouch/to-title-case": "^2.2.1",
     "bootstrap": "^4.5.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-chart-geo": "^2.1.0",
     "chartjs-plugin-datalabels": "^0.7.0",
     "core-js": "^3.6.5",
